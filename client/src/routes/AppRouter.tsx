@@ -4,8 +4,7 @@ import PatientForm from "../pages/PatientForm";
 import ClientPage from "../pages/ClientPage";
 import NotificationsPage from "../pages/NotificationsPage";
 
-
-const AppRouter =() => {
+const AppRouter = () => {
   return (
     <Router>
       <Routes>

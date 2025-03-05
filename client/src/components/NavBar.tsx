@@ -48,8 +48,8 @@ const NavBar = () => {
               borderRadius: "5px",
               transition: "background 0.3s",
             }}
-            onMouseEnter={(e) => (e.target.style.background = "#3498db")}
-            onMouseLeave={(e) => (e.target.style.background = "transparent")}
+            onMouseEnter={(e) => {(e.target as HTMLElement).style.background = "#3498db";}}            
+            onMouseLeave={(e) => ((e.target as HTMLElement).style.background = "transparent")}
           >
             Create Patient
           </Link>
@@ -66,8 +66,8 @@ const NavBar = () => {
               borderRadius: "5px",
               transition: "background 0.3s",
             }}
-            onMouseEnter={(e) => (e.target.style.background = "#3498db")}
-            onMouseLeave={(e) => (e.target.style.background = "transparent")}
+            onMouseEnter={(e) => {(e.target as HTMLElement).style.background = "#3498db";}}            
+            onMouseLeave={(e) => ((e.target as HTMLElement).style.background = "transparent")}
           >
             Urgent Notifications
           </Link>
@@ -84,8 +84,8 @@ const NavBar = () => {
               borderRadius: "5px",
               transition: "background 0.3s",
             }}
-            onMouseEnter={(e) => (e.target.style.background = "#3498db")}
-            onMouseLeave={(e) => (e.target.style.background = "transparent")}
+            onMouseEnter={(e) => {(e.target as HTMLElement).style.background = "#3498db";}}            
+            onMouseLeave={(e) => ((e.target as HTMLElement).style.background = "transparent")}
           >
             Client
           </Link>
