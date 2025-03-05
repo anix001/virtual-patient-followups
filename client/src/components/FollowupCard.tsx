@@ -51,7 +51,7 @@ const FollowupCard = ({ patient }: PatientType)=> {
               padding: "8px",
               borderRadius: "5px",
               backgroundColor:
-                followUp.status === "Completed" ? "#2ecc71" : "#f39c12",
+                followUp.status === "Healthy" ? "#2ecc71" : followUp.status === "Concern" ? "#D84040" :"#f39c12",
               color: "white",
               marginBottom: "5px",
               fontWeight: "bold",

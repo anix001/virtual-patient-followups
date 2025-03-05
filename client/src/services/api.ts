@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api";
+const API_URL = `${process.env.API_URL}/api`;
 
 export const getPatientDetails = async (id: string) => {
   return axios.get(`${API_URL}/patients/${id}`).then(res => res.data);

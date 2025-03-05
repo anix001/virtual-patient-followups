@@ -26,7 +26,7 @@ const ClientPage = () => {
   const handleFollowUpSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
     if (!followUpData.followUpDate || !followUpData.status) {
-      setError("Both Follow-Up Date and Status are required!");
+      setError("Both Follow-Up Time and Status are required!");
       return;
     }
     const respondData =  await respondToFollowUp(patientId, followUpData.followUpDate, followUpData.status);
@@ -103,7 +103,7 @@ const ClientPage = () => {
           value={followUpData.followUpDate}
           onChange={handleFollowUpChange}
           style={styles.input}
-        >   <option value="">Select Date</option>
+        >   <option value="">Select Time</option>
             {
                   followUpOptions.map((item:{date:string}, key:number)=><option key={key} value={item.date}>{item.date}</option>)
             }

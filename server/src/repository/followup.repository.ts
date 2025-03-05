@@ -36,7 +36,7 @@ class FollowupRepository {
     async checkFollowup() {
         try {
             const followupData = await PatientModel.find({
-                'followUps.status': 'n/a',
+                'followUps.status': 'No Followup Data',
             })
             return followupData
         } catch (err: unknown) {
@@ -56,7 +56,7 @@ class FollowupRepository {
             const patient = await PatientModel.findById(patientId)
             if (patient) {
                 const followUp = patient.followUps.find(
-                    (f) => f.date.toISOString().slice(0, 10) === followupDate.slice(0, 10)
+                    (f) => f.date === followupDate
                   );
                   
                   

@@ -28,11 +28,12 @@ const Home = () => {
 
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif" }}>
+    <div>
       <NavBar/>
        <div style={{marginTop:'30px', display:'flex', gap:'10px', flexWrap:'wrap'}}>
-            {
+            { followUps.length> 0 ?
               followUps.map((patient:patient) => <FollowupCard key={patient._id} patient={patient}/>)
+              : <p>No Patient Data</p>
             }
        </div>
     </div>

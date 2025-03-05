@@ -3,7 +3,7 @@ import mongoose, { Schema, Document, Model } from "mongoose";
 // export type followupStatus = "Pending" | "Healthy" | "Concern";
 
 export interface IFollowUp {
-  date: Date;
+  date: string;
   status: string
 }
 
@@ -15,7 +15,7 @@ interface IPatient extends Document {
 }
 
 const FollowUpSchema = new Schema<IFollowUp>({
-  date: { type: Date, required: true },
+  date: { type: String, required: true },
   status: { type: String, required: true },
 });
 
