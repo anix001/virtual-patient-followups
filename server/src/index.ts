@@ -1,16 +1,29 @@
 import express, { Express, NextFunction, Request, Response } from 'express'
 import cors from 'cors'
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
 
 import { config, Logger } from './utils/index.js'
 import { corsOptions, errorHandler } from './middleware/index.js'
 import appRoutes from './routes/index.js'
 import DbConnection from './db/dbConnection.js'
 
-const app: Express = express()
-const port = config.port
+const app: Express = express();
+const port = config.port;
 
 // [DB Connection]
 DbConnection();
+
+// [Set Security Headers (Prevents XSS)]
+app.use(helmet());
+
+//[ Rate Limiting (Prevents brute-force attacks)]
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per window
+    message: "Too many requests from this IP, please try again later",
+  });
+app.use(limiter);
 
 //[for json parse]
 app.use(express.json())

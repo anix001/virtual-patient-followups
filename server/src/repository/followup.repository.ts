@@ -36,7 +36,7 @@ class FollowupRepository {
     async checkFollowup() {
         try {
             const followupData = await PatientModel.find({
-                'followUps.status': 'Pending',
+                'followUps.status': 'n/a',
             })
             return followupData
         } catch (err: unknown) {

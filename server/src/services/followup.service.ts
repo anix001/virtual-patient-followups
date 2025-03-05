@@ -23,9 +23,9 @@ class FollowupService{
       const {name, ownerContact} = reqInput;
       try{
       const followups = [
-            { date: new Date(Date.now() + 24 * 60 * 60 * 1000), status: "Pending" },
-            { date: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), status: "Pending" },
-            { date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), status: "Pending" }
+            { date: new Date(Date.now() + 24 * 60 * 60 * 1000), status: "n/a" },
+            { date: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), status: "n/a" },
+            { date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), status: "n/a" }
             ];
         const patientData = this.repository.createPatient(name, ownerContact, followups);
         return patientData;

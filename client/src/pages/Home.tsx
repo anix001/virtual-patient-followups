@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div style={{ fontFamily: "Arial, sans-serif" }}>
       <NavBar/>
-       <div style={{marginTop:'30px', display:'flex', justifyContent:'space-between', flexWrap:'wrap'}}>
+       <div style={{marginTop:'30px', display:'flex', gap:'10px', flexWrap:'wrap'}}>
             {
               followUps.map((patient, key) => <FollowupCard key={key} patient={patient}/>)
             }
