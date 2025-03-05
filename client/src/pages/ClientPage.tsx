@@ -33,7 +33,12 @@ const ClientPage = () => {
     if(respondData) alert("Respond Sent!!");
     setError("");
     setFollowUpOptions([]);
-  };
+    setPatientId("");
+    setFollowUpData({
+      followUpDate: "",
+      status: "",
+    })
+  };;
 
   const handleFollowUpChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

@@ -23,6 +23,10 @@ const PatientForm = () => {
     const res = await createPatient(formData.name, formData.ownerContact);
     if(res) alert(" Patient Created!");
     setError("");
+    setFormData({
+      name: "",
+      ownerContact: "",
+    });
   };
 
   return (
