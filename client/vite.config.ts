@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
       strictPort: true,
       host: true,
       origin: "http://0.0.0.0:5173",
-      allowedHosts: ['react-app-lb-1518050552.us-east-1.elb.amazonaws.com'],
+      allowedHosts: ['react-app-lb-1338507120.us-east-1.elb.amazonaws.com'],
      },
   };
 });
