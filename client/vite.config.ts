@@ -18,6 +18,9 @@ export default defineConfig(({ mode }) => {
       host: true,
       origin: "http://0.0.0.0:5173",
       allowedHosts: ['react-app-lb-1338507120.us-east-1.elb.amazonaws.com'],
+      hmr: {
+        host: 'localhost'
+     }
      },
   };
 });

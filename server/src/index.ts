@@ -4,7 +4,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 
 import { config, Logger } from './utils/index.js'
-import { corsOptions, errorHandler } from './middleware/index.js'
+import {  errorHandler } from './middleware/index.js'
 import appRoutes from './routes/index.js'
 import DbConnection from './db/dbConnection.js'
 
@@ -28,7 +28,7 @@ app.use(limiter);
 //[for json parse]
 app.use(express.json())
 //[for cors]
-app.use(cors(corsOptions))
+app.use(cors())
 //[for logging API Request]
 app.use((req: Request, res: Response, next: NextFunction) => {
     Logger.info(`Incoming Request: ${req.method} ${req.url}`)
